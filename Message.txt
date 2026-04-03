@@ -1,0 +1,37 @@
+--- SpamShield Project: Keyword-Only Testing ---
+(Use these individual keywords to test the model's sensitivity)
+
+=========================================
+🚨 SPAM TRIGGER KEYWORDS
+=========================================
+1. Winner
+2. Prize
+3. Claim
+4. urgent
+5. free
+6. Lottery
+7. Cash
+8. Award
+9. Account
+10. Bonus
+
+=========================================
+📧 REALISTIC SPAM SAMPLES
+=========================================
+[Phishing Alert]
+URGENT: Your account has been compromised! Click this link to claim your reward.
+
+[Prize Claim]
+WINNER! You have been selected as our grand prize winner. Claim your cash reward now!
+
+[Free Entry]
+Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005.
+
+=========================================
+✅ HAM EXAMPLES (Not Spam)
+=========================================
+[Meeting]
+Hi Gaurav, can we meet tomorrow for the project?
+
+[Academic]
+Your grades have been posted on the university portal.

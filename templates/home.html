@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}SpamShield | Intelligent Spam Classification{% endblock %}
+
+{% block content %}
+<section class="glass-card" style="margin-top: 3rem; text-align: center;">
+    <div class="badge" style="background: rgba(99, 102, 241, 0.1); color: #818cf8; padding: 0.5rem 1rem; border-radius: 2rem; display: inline-block; margin-bottom: 2rem; font-weight: 600; font-size: 0.875rem; border: 1px solid rgba(99, 102, 241, 0.2);">
+        <i class="fas fa-shield-halved"></i> SpamShield - MCA Project
+    </div>
+    <h1>Intelligent Spam Email Classification System</h1>
+    <p class="subtitle" style="max-width: 800px; margin: 0 auto 3rem;">
+        A sophisticated Machine Learning solution designed to filter and categorize unsolicited communications using 
+        Natural Language Processing (NLP) and Naive Bayes architecture.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="/index" class="btn-primary" style="text-decoration: none;">Launch Classifier</a>
+        <a href="/about" class="btn-secondary" style="text-decoration: none;">View Documentation</a>
+    </div>
+
+    <div class="methodology-grid" style="text-align: left; margin-top: 5rem; border-top: 1px solid var(--border-card); padding-top: 3rem;">
+        <div class="method-card">
+            <i class="fas fa-cogs" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+            <h3>Preprocessing Pipeline</h3>
+            <p>Advanced tokenization, punctuation removal, and Porter Stemming for efficient feature reduction.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-project-diagram" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+            <h3>TF-IDF Vectorization</h3>
+            <p>Numerical representation of text using Term Frequency-Inverse Document Frequency metrics.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-brain" style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;"></i>
+            <h3>Naive Bayes Analysis</h3>
+            <p>Probability-based classification optimized for high-dimensional textual feature spaces.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+    </main>
+</body>
+</html>

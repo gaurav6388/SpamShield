@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}Methodology | SpamShield AI{% endblock %}
+
+{% block content %}
+<section class="glass-card" style="margin-top: 3rem;">
+    <h1 style="color: var(--primary);">Architecture & Methodology</h1>
+    <p class="subtitle">A detailed look at the technical stack and machine learning pipeline behind the classification process.</p>
+
+    <div style="margin-top: 3rem;">
+        <h3 style="margin-bottom: 1rem; color: #fff;">1. Data Collection & Preprocessing</h3>
+        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+            The model was trained on the 5,572 records of the SMS Spam Collection dataset. 
+            Each message underwent a rigorous cleaning process: Lowercasing, Tokenization (nltk), 
+            Removal of special characters and punctuation, and Porter Stemming to reduce words 
+            to their root form (e.g., "running" becomes "run").
+        </p>
+
+        <h3 style="margin-bottom: 1rem; color: #fff;">2. Feature Engineering (TF-IDF)</h3>
+        <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+            We used the <strong>Term Frequency-Inverse Document Frequency (TF-IDF)</strong> vectorizer 
+            to convert text into numerical vectors. This algorithm weighs terms based on their frequency 
+            in a specific message compared to the entire corpus, highlighting unique keywords that 
+            distinguish spam from legitimate messages.
+        </p>
+
+        <h3 style="margin-bottom: 1rem; color: #fff;">3. Classification Algorithm</h3>
+        <p style="color: var(--text-muted); line-height: 1.6;">
+            The <strong>Multinomial Naive Bayes (MNB)</strong> classifier was selected for its 
+            exceptional performance in text classification tasks. Based on Bayes' Theorem, it 
+            calculates the probability of each class given the input features, assuming 
+            independence between them—a proven architecture for reliable spam filtering.
+        </p>
+    </div>
+
+    <div class="methodology-grid" style="margin-top: 4rem; text-align: center;">
+        <div class="method-card">
+            <i class="fas fa-microscope" style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;"></i>
+            <h4>Precision</h4>
+            <p>Optimized for low false-positive rates to ensure legitimate mail isn't tagged as spam.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-bolt" style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;"></i>
+            <h4>Latency</h4>
+            <p>Real-time processing with less than 100ms inference time per message.</p>
+        </div>
+        <div class="method-card">
+            <i class="fas fa-shield-alt" style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;"></i>
+            <h4>Scalability</h4>
+            <p>Flask-ready architecture suitable for deployment on cloud infrastructure.</p>
+        </div>
+    </div>
+</section>
+
+<section class="glass-card" style="margin-top: 3rem;">
+    <h3 style="color: #fff; margin-bottom: 1.5rem;">Project Contributors</h3>
+    <div style="display: flex; gap: 2rem;">
+        <div style="flex: 1; padding: 1.5rem; border: 1px solid var(--border-card); border-radius: 1rem; background: rgba(255,255,255,0.02);">
+            <h4 style="color: var(--primary);">Gaurav Singh</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Lead Frontend & UX Architect</p>
+        </div>
+        <div style="flex: 1; padding: 1.5rem; border: 1px solid var(--border-card); border-radius: 1rem; background: rgba(255,255,255,0.02);">
+            <h4 style="color: var(--primary);">Gyanendra Singh</h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Backend & ML Engineer</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
