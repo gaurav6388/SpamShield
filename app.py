@@ -15,9 +15,12 @@ ps = PorterStemmer()
 
 # --- Robust Model Loading ---
 try:
-    with open('vectorizer.pkl', 'rb') as f:
+    vectorizer_path = os.path.join(project_root, 'vectorizer.pkl')
+    model_path = os.path.join(project_root, 'model.pkl')
+    
+    with open(vectorizer_path, 'rb') as f:
         tfidf = pickle.load(f)
-    with open('model.pkl', 'rb') as f:
+    with open(model_path, 'rb') as f:
         model = pickle.load(f)
 except Exception as e:
     print(f"CRITICAL ERROR: Could not load model files. Please ensure vectorizer.pkl and model.pkl exist. Error: {e}")
