@@ -27,16 +27,26 @@ except Exception as e:
     tfidf = None
     model = None
 
-# --- Optimized NLTK Download ---
+# --- Optimized NLTK Download for Cloud (Vercel/Render) ---
+# On Vercel, /tmp is the only writable directory
+nltk_data_path = os.path.join('/tmp', 'nltk_data')
+if not os.path.exists(nltk_data_path):
+    try:
+        os.makedirs(nltk_data_path)
+    except:
+        pass # Fallback if /tmp is not writable
+
+nltk.data.path.append(nltk_data_path)
+
 try:
     nltk.data.find('tokenizers/punkt')
     nltk.data.find('tokenizers/punkt_tab')
     nltk.data.find('corpora/stopwords')
 except LookupError:
     print("Downloading required NLTK resources...")
-    nltk.download('punkt')
-    nltk.download('punkt_tab')
-    nltk.download('stopwords')
+    nltk.download('punkt', download_dir=nltk_data_path)
+    nltk.download('punkt_tab', download_dir=nltk_data_path)
+    nltk.download('stopwords', download_dir=nltk_data_path)
 
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
