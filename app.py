@@ -7,10 +7,8 @@ from nltk.stem import PorterStemmer
 import os
 
 project_root = os.path.dirname(os.path.abspath(__file__))
-template_path = os.path.join(project_root, 'templates')
-static_path = os.path.join(project_root, 'public', 'static')
-
-app = Flask(__name__, template_folder=template_path, static_folder=static_path)
+# Standard Flask Structure
+app = Flask(__name__, template_folder='templates', static_folder='static')
 ps = PorterStemmer()
 
 # --- Robust Model Loading ---

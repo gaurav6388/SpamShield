@@ -1,18 +1,12 @@
 [build]
   command = "pip install -r requirements.txt"
-  publish = "public" # This is now the ONLY folder served as static
+  publish = ".netlify/dummy" # Points to an empty non-existent or dummy folder to force function routing
 
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# 1. Prioritize real static files (CSS/JS)
-[[redirects]]
-  from = "/static/*"
-  to = "/static/:splat"
-  status = 200
-
-# 2. Route all other traffic to the Python Function
+# Route EVERYTHING to the function to let Flask handle templates AND static files
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/api"
